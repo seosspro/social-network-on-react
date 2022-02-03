@@ -1,0 +1,25 @@
+.nav li {
+    list-style: none;
+    font-size: 22px;
+    text-transform: uppercase;
+}
+
+.nav ul {
+    display: flex;
+    column-gap: 15px;
+    background-color: beige;
+    padding-top: 20px;
+    padding-bottom: 20px;
+    margin: 0;
+}
+
+.nav ul a {
+    text-decoration: none;
+    color: black;
+    margin: 0;
+    padding: 0;
+}
+
+.nav a.active {
+    color: blue;
+}

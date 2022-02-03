@@ -1,0 +1,30 @@
+.posts {
+    background-color: aquamarine;
+    text-transform: uppercase;
+    display: flex;
+    flex-direction: column;
+    padding: 40px;
+}
+
+.posts__avatar {
+    width: 80px;
+    height: 80px;
+    margin-right: 20px;
+    margin-top: 20px;
+    border-radius: 50px;
+}
+
+.posts__like {
+    width: 70px;
+}
+
+.posts textarea {
+    width: 240px;
+    height: 50px;
+    padding: 15px;
+}
+
+.posts__post {
+    display: flex;
+    flex-direction: column;
+}

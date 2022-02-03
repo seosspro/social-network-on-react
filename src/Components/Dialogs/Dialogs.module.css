@@ -1,0 +1,25 @@
+.dialogs {
+    display: flex;
+    flex-direction: row;
+}
+
+.dialogsItems {
+    min-height: 940px;
+    background-color: lavender;
+    padding: 20px;
+}
+
+.messages {
+    background-color: darkgray;
+    min-height: 940px;
+    width: 890px;
+    padding: 20px;
+}
+
+a {
+    text-decoration: none;
+}
+
+.dialogItem a.active{
+    color: red;
+}
