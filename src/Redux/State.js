@@ -1,3 +1,6 @@
+const ADD_POST = "ADD-POST";
+const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT";
+
 let store = {
     _state: {
         profilePage: {
@@ -37,7 +40,9 @@ let store = {
             { name: "Макс" },
         ],
     },
+
     getState() {
+        this.dispatch = this.dispatch.bind(this); // привязал контекст
         return this._state;
     },
     _callSubscriber() {},
@@ -49,18 +54,27 @@ let store = {
         if (action.type === "ADD-POST") {
             let newPost = {
                 id: 5,
-                message: store.getState().profilePage.newPostText,
+                message: this.getState().profilePage.newPostText,
                 likesCount: 0,
             };
-            store.getState().profilePage.posts.push(newPost);
-            store.getState().profilePage.newPostText = "";
-            store._callSubscriber(store.getState());
+            this.getState().profilePage.posts.push(newPost);
+            this.getState().profilePage.newPostText = "";
+            this._callSubscriber(this.getState());
         } else if (action.type === "UPDATE-NEW-POST-TEXT") {
-            store.getState().profilePage.newPostText = action.newText;
-            store._callSubscriber(store.getState());
+            this.getState().profilePage.newPostText = action.newText;
+            this._callSubscriber(this.getState());
         }
     },
 };
+
+export let addPostActionCreator = () => ({
+    type: ADD_POST,
+});
+
+export let updateNewPostTextActionCreator = text => ({
+    type: UPDATE_NEW_POST_TEXT,
+    newText: text,
+});
 
 export default store;
 window.store = store;
