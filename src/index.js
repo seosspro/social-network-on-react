@@ -11,13 +11,12 @@ let rerenderEntireTree = state => {
         <React.StrictMode>
             <BrowserRouter>
                 <App
-                    state={store.getState}
-                    posts={store.profilePage.posts.bind(store)}
-                    dialogs={store.dialogsPage.dialogs.bind(store)}
-                    messages={store.dialogsPage.messages.bind(store)}
-                    addPost={store.addPost.bind(store)}
-                    newPostText={store.profilePage.newPostText.bind(store)}
-                    updateNewPostText={store.updateNewPostText.bind(store)}
+                    state={store.getState()}
+                    dispatch={store.dispatch.bind()}
+                    posts={store.getState().profilePage.posts}
+                    dialogs={store.getState().dialogsPage.dialogs}
+                    messages={store.getState().dialogsPage.messages}
+                    newPostText={store.getState().profilePage.newPostText}
                 />
             </BrowserRouter>
         </React.StrictMode>,

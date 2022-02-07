@@ -25,9 +25,8 @@ const App = props => {
                     element={
                         <Profile
                             posts={props.posts}
-                            addPost={props.addPost}
+                            dispatch={props.dispatch}
                             newPostText={props.newPostText}
-                            updateNewPostText={props.updateNewPostText}
                         />
                     }
                 />
