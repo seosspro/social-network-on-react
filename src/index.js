@@ -11,8 +11,8 @@ let rerenderEntireTree = state => {
         <React.StrictMode>
             <BrowserRouter>
                 <App
-                    state={store.getState()}
-                    dispatch={store.dispatch.bind()}
+                    store={store}
+                    dispatch={store.dispatch.bind(store)}
                     posts={store.getState().profilePage.posts}
                     dialogs={store.getState().dialogsPage.dialogs}
                     messages={store.getState().dialogsPage.messages}
