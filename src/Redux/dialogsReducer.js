@@ -8,9 +8,8 @@ const dialogsReducer = (state, action) => {
         let body = state.newMessageBody;
         state.newMessageBody = "";
         state.messages.push({ id: 6, message: body });
-
-        return state;
     }
+    return state;
 };
 
 export const sendMessageCreator = () => ({
