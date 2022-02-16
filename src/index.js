@@ -5,19 +5,15 @@ import ReactDOM from "react-dom";
 import "./index.css";
 import App from "./App";
 import { BrowserRouter } from "react-router-dom";
+import { Provider } from "react-redux";
 
-let rerenderEntireTree = state => {
+let rerenderEntireTree = () => {
     ReactDOM.render(
         <React.StrictMode>
             <BrowserRouter>
-                <App
-                    store={store}
-                    dispatch={store.dispatch.bind(store)}
-                    posts={store.getState().profilePage.posts}
-                    dialogs={store.getState().dialogsPage.dialogs}
-                    messages={store.getState().dialogsPage.messages}
-                    newPostText={store.getState().profilePage.newPostText}
-                />
+                <Provider value={store}>
+                    <App />
+                </Provider>
             </BrowserRouter>
         </React.StrictMode>,
         document.getElementById("root")
@@ -25,9 +21,8 @@ let rerenderEntireTree = state => {
 };
 
 store.subscribe(() => {
-    let state = store.getState();
-    rerenderEntireTree(state);
+    rerenderEntireTree();
 });
-rerenderEntireTree(store.getState());
+rerenderEntireTree();
 
 reportWebVitals();
