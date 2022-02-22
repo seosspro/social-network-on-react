@@ -7,7 +7,7 @@
 .nav ul {
     display: flex;
     column-gap: 15px;
-    background-color: beige;
+    background-color:lightblue;
     padding-top: 20px;
     padding-bottom: 20px;
     margin: 0;
@@ -21,5 +21,5 @@
 }
 
 .nav a.active {
-    color: blue;
+    color: white;
 }

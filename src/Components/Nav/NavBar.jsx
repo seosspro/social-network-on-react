@@ -21,7 +21,12 @@ const NavBar = () => {
                 <li className='main-nav__li'>Новости</li>
                 <li className='main-nav__li'>Сервисы</li>
                 <li className='main-nav__li'>Музыка</li>
-                <li className='main-nav__li'>Поиск</li>
+                <NavLink
+                    to='/Users'
+                    className={navData => (navData.isActive ? c.active : c.nav)}
+                >
+                    <li className='main-nav__li'>Поиск</li>
+                </NavLink>
             </ul>
         </nav>
     );
