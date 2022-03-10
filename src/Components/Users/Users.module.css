@@ -1,4 +1,17 @@
-.userPhoto{
+.userPhoto {
     width: 200px;
     height: 200px;
+}
+
+.userContainer {
+    background-color: snow;
+}
+
+.selectedPage {
+    font-weight: bold;
+}
+
+
+span {
+    cursor: pointer;
 }
