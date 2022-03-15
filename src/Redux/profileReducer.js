@@ -1,15 +1,15 @@
-const ADD_POST = "ADD-POST";
-const UPDATE_NEW_POST_TEXT = "UPDATE-NEW-POST-TEXT";
+const ADD_POST = 'ADD-POST';
+const UPDATE_NEW_POST_TEXT = 'UPDATE-NEW-POST-TEXT';
 
 let initialState = {
     posts: [
-        { id: 1, message: "Hi, i`m developer.", likesCount: 10000 },
-        { id: 2, message: "Hi, guys", likesCount: 0 },
-        { id: 3, message: "Shut up!", likesCount: 1337 },
-        { id: 4, message: "4UPAPIMUNYANYA", likesCount: 1488 },
-        { id: 5, message: "Hey!", likesCount: 228 },
+        { id: 1, message: 'Hi, i`m developer.', likesCount: 10000 },
+        { id: 2, message: 'Hi, guys', likesCount: 0 },
+        { id: 3, message: 'Shut up!', likesCount: 1337 },
+        { id: 4, message: '4UPAPIMUNYANYA', likesCount: 1488 },
+        { id: 5, message: 'Hey!', likesCount: 228 },
     ],
-    newPostText: "seossProject.",
+    newPostText: 'seossProject.',
 };
 
 const profileReducer = (state = initialState, action) => {
@@ -22,7 +22,7 @@ const profileReducer = (state = initialState, action) => {
         return {
             ...state,
             posts: [...state.posts, newPost],
-            newPostText: "",
+            newPostText: '',
         };
     } else if (action.type === UPDATE_NEW_POST_TEXT) {
         return {
@@ -42,4 +42,3 @@ export const updateNewPostTextActionCreator = text => ({
 });
 
 export default profileReducer;
-

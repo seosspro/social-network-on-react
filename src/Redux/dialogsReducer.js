@@ -1,23 +1,23 @@
-const UPDATE_NEW_MESSAGE_BODY = "UPDATE-NEW-MESSAGE-BODY";
-const SEND_MESSAGE = "SEND-MESSAGE";
+const UPDATE_NEW_MESSAGE_BODY = 'UPDATE-NEW-MESSAGE-BODY';
+const SEND_MESSAGE = 'SEND-MESSAGE';
 
 let initialState = {
     messages: [
-        { id: "1", message: "Хай" },
-        { id: "2", message: "Ку" },
-        { id: "3", message: "-_-" },
-        { id: "4", message: "-.-" },
-        { id: "5", message: "чо" },
+        { id: '1', message: 'Хай' },
+        { id: '2', message: 'Ку' },
+        { id: '3', message: '-_-' },
+        { id: '4', message: '-.-' },
+        { id: '5', message: 'чо' },
     ],
 
     dialogs: [
-        { id: "1", name: "Серега" },
-        { id: "2", name: "Валера" },
-        { id: "3", name: "Жека" },
-        { id: "4", name: "Андрей" },
-        { id: "5", name: "Макс" },
+        { id: '1', name: 'Серега' },
+        { id: '2', name: 'Валера' },
+        { id: '3', name: 'Жека' },
+        { id: '4', name: 'Андрей' },
+        { id: '5', name: 'Макс' },
     ],
-    newMessageBody: "",
+    newMessageBody: '',
 };
 
 const dialogsReducer = (state = initialState, action) => {
@@ -30,7 +30,7 @@ const dialogsReducer = (state = initialState, action) => {
         let body = state.newMessageBody;
         return {
             ...state,
-            newMessageBody: "",
+            newMessageBody: '',
             messages: [...state.messages, { id: 6, message: body }],
         };
     }
